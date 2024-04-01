@@ -1,51 +1,79 @@
+from PySide6.QtWidgets import QRadioButton, QCheckBox, QMainWindow, QApplication
+from lunche import Ui_mainWindow
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget
-from PyQt6.QtCore import Qt
-
 
 class MainWindow(QMainWindow):
     def __init__(self):
-        super().__init__()
-        self.setWindowTitle('My App')
+        super(MainWindow, self).__init__()
 
-        self.label = QLabel('Click in this window')
-        self.label1 = QLabel('Here is text:')
+        # Загружаю проект
+        self.ui = Ui_mainWindow()
+        self.ui.setupUi(self)
+        self.count = 0
 
-        layout = QVBoxLayout()
-        layout.addWidget(self.label1)
-        layout.addWidget(self.label)
+        # Блокирую QRadioButton
+        self.ui.layoutWidget.setEnabled(False)
+        self.ui.layoutWidget1.setEnabled(False)
+        self.ui.layoutWidget2.setEnabled(False)
+        self.ui.layoutWidget3.setEnabled(False)
+        self.ui.layoutWidget4.setEnabled(False)
+        self.ui.layoutWidget5.setEnabled(False)
 
-        container = QWidget()
-        container.setLayout(layout)
+        # Блокирую QPushButton
+        self.ui.pushButton.setEnabled(False)
 
-        self.setCentralWidget(container)
+        # Проверяю состояние QCheckBox
+        self.ui.checkBox.stateChanged.connect(self.block1)
+        self.ui.checkBox_2.stateChanged.connect(self.block2)
+        self.ui.checkBox_3.stateChanged.connect(self.block3)
+        self.ui.checkBox_4.stateChanged.connect(self.block4)
+        self.ui.checkBox_5.stateChanged.connect(self.block5)
+        self.ui.checkBox_6.stateChanged.connect(self.block6)
 
-    def mousePressEvent(self, e):
-        if e.button() == Qt.MouseButton.LeftButton:
-                self.label.setText('mousePressEvent LEFT')
-        elif e.button == Qt.MouseButton.MiddleButton:
-            self.label.setText('mousePressEvent MIDDLE')
-        elif e.button() == Qt.MouseButton.RightButton:
-            self.label.setText('mousePressEvent RIGHT')
+    def block1(self, s):
+        self.ui.layoutWidget.setEnabled(s)
+        self.count += s - 1
+        if self.count >= 2:
+            self.ui.pushButton.setEnabled(True)
+    def block2(self, s):
+        self.ui.layoutWidget1.setEnabled(s)
+        self.count += s - 1
+        if self.count >= 2:
+            self.ui.pushButton.setEnabled(True)
+        else:
+            self.ui.pushButton.setEnabled(False)
+    def block3(self, s):
+        self.ui.layoutWidget2.setEnabled(s)
+        self.count += s - 1
+        if self.count >= 2:
+            self.ui.pushButton.setEnabled(True)
+        else:
+            self.ui.pushButton.setEnabled(False)
+    def block4(self, s):
+        self.ui.layoutWidget3.setEnabled(s)
+        self.count += s - 1
+        if self.count >= 2:
+            self.ui.pushButton.setEnabled(True)
+        else:
+            self.ui.pushButton.setEnabled(False)
+    def block5(self, s):
+        self.ui.layoutWidget4.setEnabled(s)
+        self.count += s - 1
+        if self.count >= 2:
+            self.ui.pushButton.setEnabled(True)
+        else:
+            self.ui.pushButton.setEnabled(False)
+    def block6(self, s):
+        self.ui.layoutWidget5.setEnabled(s)
+        self.count += s - 1
+        if self.count >= 2:
+            self.ui.pushButton.setEnabled(True)
+        else:
+            self.ui.pushButton.setEnabled(False)
 
-    def mouseReleaseEvent(self, e):
-        if e.button() == Qt.MouseButton.LeftButton:
-            self.label.setText('mouseReleaseEvent LEFT')
-        elif e.button() == Qt.MouseButton.MiddleButton:
-            self.label.setText('mouseReleaseEvent MIDDLE')
-        elif e.button() == Qt.MouseButton.RightButton:
-            self.label.setText('mouseReleaseEvent RIGHT')
-
-    def mouseDoubleClickEvent(self, e):
-        if e.button() == Qt.MouseButton.LeftButton:
-            self.label.setText('mouseDoubleClickEvent LEFT')
-        elif e.button() == Qt.MouseButton.MiddleButton:
-            self.label.setText('mouseDoubleClickEvent MIDDLE')
-        elif e.button() == Qt.MouseButton.RightButton:
-            self.label.setText('mouseDoubleClickEvent RIGHT')
 
 
 app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
+window0 = MainWindow()
+window0.show()
 app.exec()
