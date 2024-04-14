@@ -1,0 +1,20 @@
+{
+  "positive": [
+    "wwwww",
+    "wwwww",
+    "wwwww",
+    "wwwww"
+  ],
+  "negative": [
+    "wwwww",
+    "wwwww",
+    "wwwww",
+    "wwwww",
+    "wwwww",
+    "wwwww",
+    "wwwww",
+    "wwwww"
+  ],
+  "count_positive": 4,
+  "count_negative": 8
+}
