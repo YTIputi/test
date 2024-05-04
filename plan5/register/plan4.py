@@ -5,14 +5,15 @@ from plan import Ui_MainWindow1
 
 
 class Plan(QMainWindow):
-    def __init__(self, question):
+    def __init__(self, question, person):
         super().__init__()
         if not os.path.isdir('../results_plan'):
             os.mkdir('../results_plan')
         self.ui = Ui_MainWindow1()
         self.ui.setupUi(self)
         self.question = question
-        self.data = {'positive': [], 'negative': [], 'count_positive': 0, 'count_negative': 0}
+        self.person = person
+        self.data = {self.person: {'positive': [], 'negative': [], 'count_positive': 0, 'count_negative': 0}}
         self.ui.label.setText(question)
 
         self.ui.lineEdit.textEdited.connect(self.argument)
@@ -39,10 +40,10 @@ class Plan(QMainWindow):
         dlg.setIcon(QMessageBox.Icon.Question)
         button = dlg.exec()
         if button == QMessageBox.Yes:
-            self.data['count_positive'] += 1
-            self.data['positive'].append(self.ui.lineEdit.text())
-            self.ui.listWidget.addItem(self.data['positive'][-1])
-            self.ui.lcdNumber.display(self.data['count_positive'])
+            self.data[self.person]['count_positive'] += 1
+            self.data[self.person]['positive'].append(self.ui.lineEdit.text())
+            self.ui.listWidget.addItem(self.data[self.person]['positive'][-1])
+            self.ui.lcdNumber.display(self.data[self.person]['count_positive'])
 
     def negative(self):
         dlg = QMessageBox(self)
@@ -52,10 +53,10 @@ class Plan(QMainWindow):
         dlg.setIcon(QMessageBox.Icon.Question)
         button = dlg.exec()
         if button == QMessageBox.Yes:
-            self.data['count_negative'] += 1
-            self.data['negative'].append(self.ui.lineEdit.text())
-            self.ui.listWidget_2.addItem(self.data['negative'][-1])
-            self.ui.lcdNumber_2.display(self.data['count_negative'])
+            self.data[self.person]['count_negative'] += 1
+            self.data[self.person]['negative'].append(self.ui.lineEdit.text())
+            self.ui.listWidget_2.addItem(self.data[self.person]['negative'][-1])
+            self.ui.lcdNumber_2.display(self.data[self.person]['count_negative'])
 
     def save(self):
         dlg = QMessageBox(self)
@@ -70,14 +71,15 @@ class Plan(QMainWindow):
 
 
 class Question(QMainWindow):
-    def __init__(self):
+    def __init__(self, person):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.person = person
 
         self.ui.lineEdit.returnPressed.connect(self.question)
 
     def question(self):
-        self.ui.tabWidget.addTab(Plan(self.ui.lineEdit.text()), self.ui.lineEdit.text())
+        self.ui.tabWidget.addTab(Plan(self.ui.lineEdit.text(), self.person), self.ui.lineEdit.text())
 
 

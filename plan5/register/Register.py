@@ -16,34 +16,34 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QSizePolicy, QSpacerItem, QVBoxLayout,
-    QWidget)
+    QLineEdit, QPushButton, QSizePolicy, QSpacerItem,
+    QVBoxLayout, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(533, 629)
+        Form.resize(672, 684)
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(15)
         Form.setFont(font)
-        self.horizontalLayout = QHBoxLayout(Form)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout_2 = QHBoxLayout(Form)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
-        self.horizontalLayout_2 = QHBoxLayout(self.widget)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3 = QHBoxLayout(self.widget)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
 
-        self.line_4 = QFrame(self.widget)
-        self.line_4.setObjectName(u"line_4")
-        self.line_4.setFrameShape(QFrame.VLine)
-        self.line_4.setFrameShadow(QFrame.Sunken)
+        self.line_5 = QFrame(self.widget)
+        self.line_5.setObjectName(u"line_5")
+        self.line_5.setFrameShape(QFrame.VLine)
+        self.line_5.setFrameShadow(QFrame.Sunken)
 
-        self.horizontalLayout_2.addWidget(self.line_4)
+        self.horizontalLayout_3.addWidget(self.line_5)
 
         self.verticalLayout_9 = QVBoxLayout()
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
@@ -77,6 +77,7 @@ class Ui_Form(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.label_2 = QLabel(self.widget)
         self.label_2.setObjectName(u"label_2")
+        self.label_2.setFont(font)
         self.label_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_2.addWidget(self.label_2)
@@ -93,6 +94,7 @@ class Ui_Form(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.label_3 = QLabel(self.widget)
         self.label_3.setObjectName(u"label_3")
+        self.label_3.setFont(font)
 
         self.verticalLayout_3.addWidget(self.label_3)
 
@@ -108,6 +110,7 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label_4 = QLabel(self.widget)
         self.label_4.setObjectName(u"label_4")
+        self.label_4.setFont(font)
 
         self.verticalLayout.addWidget(self.label_4)
 
@@ -123,6 +126,7 @@ class Ui_Form(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_5 = QLabel(self.widget)
         self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font)
 
         self.verticalLayout_4.addWidget(self.label_5)
 
@@ -138,6 +142,7 @@ class Ui_Form(object):
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.label_6 = QLabel(self.widget)
         self.label_6.setObjectName(u"label_6")
+        self.label_6.setFont(font)
 
         self.verticalLayout_5.addWidget(self.label_6)
 
@@ -149,17 +154,18 @@ class Ui_Form(object):
 
         self.verticalLayout_9.addLayout(self.verticalLayout_5)
 
-        self.verticalLayout_6 = QVBoxLayout()
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.line_3 = QFrame(self.widget)
         self.line_3.setObjectName(u"line_3")
         self.line_3.setFrameShape(QFrame.HLine)
         self.line_3.setFrameShadow(QFrame.Sunken)
 
-        self.verticalLayout_6.addWidget(self.line_3)
+        self.verticalLayout_9.addWidget(self.line_3)
 
+        self.verticalLayout_6 = QVBoxLayout()
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.label_7 = QLabel(self.widget)
         self.label_7.setObjectName(u"label_7")
+        self.label_7.setFont(font)
 
         self.verticalLayout_6.addWidget(self.label_7)
 
@@ -175,6 +181,7 @@ class Ui_Form(object):
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.label_8 = QLabel(self.widget)
         self.label_8.setObjectName(u"label_8")
+        self.label_8.setFont(font)
 
         self.verticalLayout_7.addWidget(self.label_8)
 
@@ -190,6 +197,7 @@ class Ui_Form(object):
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.label_9 = QLabel(self.widget)
         self.label_9.setObjectName(u"label_9")
+        self.label_9.setFont(font)
 
         self.verticalLayout_8.addWidget(self.label_9)
 
@@ -205,6 +213,23 @@ class Ui_Form(object):
 
         self.verticalLayout_8.addWidget(self.line_2)
 
+        self.widget_2 = QWidget(self.widget)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout = QHBoxLayout(self.widget_2)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.pushButton = QPushButton(self.widget_2)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setFont(font)
+
+        self.horizontalLayout.addWidget(self.pushButton)
+
+
+        self.verticalLayout_8.addWidget(self.widget_2)
+
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_8.addItem(self.verticalSpacer_2)
@@ -213,21 +238,21 @@ class Ui_Form(object):
         self.verticalLayout_9.addLayout(self.verticalLayout_8)
 
 
-        self.horizontalLayout_2.addLayout(self.verticalLayout_9)
+        self.horizontalLayout_3.addLayout(self.verticalLayout_9)
 
-        self.line_5 = QFrame(self.widget)
-        self.line_5.setObjectName(u"line_5")
-        self.line_5.setFrameShape(QFrame.VLine)
-        self.line_5.setFrameShadow(QFrame.Sunken)
+        self.line_4 = QFrame(self.widget)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFrameShape(QFrame.VLine)
+        self.line_4.setFrameShadow(QFrame.Sunken)
 
-        self.horizontalLayout_2.addWidget(self.line_5)
+        self.horizontalLayout_3.addWidget(self.line_4)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
 
 
-        self.horizontalLayout.addWidget(self.widget)
+        self.horizontalLayout_2.addWidget(self.widget)
 
 
         self.retranslateUi(Form)
@@ -251,5 +276,6 @@ class Ui_Form(object):
         self.label_7.setText(QCoreApplication.translate("Form", u"\u0424\u0418\u041e", None))
         self.label_8.setText(QCoreApplication.translate("Form", u"\u0413\u043e\u0440\u043e\u0434", None))
         self.label_9.setText(QCoreApplication.translate("Form", u"\u041e \u0441\u0435\u0431\u0435", None))
+        self.pushButton.setText(QCoreApplication.translate("Form", u"\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f", None))
     # retranslateUi
 
