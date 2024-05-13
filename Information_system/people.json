@@ -1,0 +1,16 @@
+[
+  {
+    "login": "gleb",
+    "password": "123",
+    "title": "admin"
+  },
+{
+    "login": "gleb",
+    "password": "321",
+    "title": "mened"
+  },
+{
+    "login": "gleb",
+    "password": "132",
+    "title": "stock"
+  }]
